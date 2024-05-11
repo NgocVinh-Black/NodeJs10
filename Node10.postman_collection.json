@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "8cd82e80-35a6-47e9-a1c8-1cf583bb3eb9",
+		"name": "Node10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33366310"
+	},
+	"item": [
+		{
+			"name": "SignUp/Login",
+			"item": [
+				{
+					"name": "Đăng kí",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"userTest2000@gmail.com\",\r\n    \"matKhau\":\"123456789\",\r\n    \"hoTen\":\"Phạm Văn Núi\",\r\n    \"tuoi\":\"30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Đăng nhập",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test123@gmail.com\",\r\n    \"matKhau\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chủ",
+			"item": [
+				{
+					"name": "GET danh sách ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/image/get-hinh-anh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-hinh-anh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET tìm kiếm danh sách ảnh theo tên",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/image/search-hinh-anh?text=hinh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"search-hinh-anh"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "hinh"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chi tiết",
+			"item": [
+				{
+					"name": "GET thông tin ảnh và người tạo ảnh bằng id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/image/get-info-hinh-anh/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-info-hinh-anh",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET thông tin bình luận theo id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/image/get-comment-hinh-anh/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-comment-hinh-anh",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET thông tin đã lưu hình theo id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/image/get-info-save-hinh-anh/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-info-save-hinh-anh",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST lưu thông tin bình luận của người dùng với hình ảnh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nguoiDungId\":\"22\",\r\n    \"hinhId\":\"15\",\r\n    \"noiDung\":\"Hình Ok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/image/post-info-comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"post-info-comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang quản lý ảnh",
+			"item": [
+				{
+					"name": "GET thông tin user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user/get-info-user/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get-info-user",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET danh sách ảnh đã lưu theo user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user/get-save-img-user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get-save-img-user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET danh sách ảnh đã tạo theo user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user/get-new-img-user/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get-new-img-user",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE xóa ảnh đã tạo theo id ảnh",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user/delete-img-id/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"delete-img-id",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang thêm ảnh",
+			"item": [
+				{
+					"name": "POST thêm một ảnh của user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjUsImlhdCI6MTcxNTQxMzc1MCwiZXhwIjoxNzE1NDE0MzUwfQ._A9Xr6-kAfEn10wYYIxchxsaOCXWLBXfWPbBexAlyWE"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/images.jfif"
+								},
+								{
+									"key": "ten_hinh",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "duong_dan",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mo_ta",
+									"value": "Thêm hình test",
+									"type": "text"
+								},
+								{
+									"key": "nguoi_dung_id",
+									"value": "25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/post-img-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"post-img-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chỉnh sửa thông tin cá nhân",
+			"item": [
+				{
+					"name": "PUT thông tin cá nhân của user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaUR1bmdJZCI6MjEsImlhdCI6MTcxNTQwMDM1NCwiZXhwIjoxNzE1NDAwOTU0fQ.8lFPPmIcKkwwtbmqbRWBYnYMM1ZcKVF0bt0jcYePrHw"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/images.jfif"
+								},
+								{
+									"key": "email",
+									"value": "user20@example.com",
+									"type": "text"
+								},
+								{
+									"key": "mat_khau",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "ho_ten",
+									"value": "Phạm Minh Un",
+									"type": "text"
+								},
+								{
+									"key": "tuoi",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "anh_dai_dien",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nguoi_dung_id",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/put-info-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"put-info-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
